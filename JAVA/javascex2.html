@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>demo2</title>
+        <script language="javascript">
+            function f1()
+            {
+                alert("hello everybody");
+            }
+            function f2()
+            {
+                document.getElementById("myimage").src="rooms.png";
+            }
+            function f3()
+            {
+                if(confirm("are you sure to unload the image?"))
+                {
+                    document.getElementById("myimage").src="";
+                }
+            }
+            function f4()
+            {
+                document.getElementById("myimage").src="rooms.png";
+            }
+            function f5()
+            {
+                document.getElementById("myimage").src="friendss.png";
+            }
+        </script>
+        </head>
+        <body>
+            <center>
+                <input type=button value="Greet All" style="font_size:32px" onClick="f1()">
+                <input type=button value="Load image" style="font_size:32px" onClick="f2()">
+                <input type=button value="Unload image" style="font_size:32px" onClick="f3()">
+                <br> <img width=250 id="myimage">
+                <br>
+                <img src="friendss.png" width="500" id="myimage" omMouseOver="f4()"
+                onMouseOut="f5()">
+               
+            </center>
+        </body>
+</html>

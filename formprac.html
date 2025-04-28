@@ -1,0 +1,42 @@
+<doctype html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8"/>
+            <title>
+                frompracticing
+            </title>
+        </head>
+        <body>
+            
+            <h1>Data entry</h1>
+            <form name="DATAETRY" action="processing.html" mathod="post">
+                
+                <p>UserName</p>
+                <input type="text" name="txtUser" id="txtUser" value="" placeholder="enter your name"/>
+                <p>password</p>
+                <input type="password" name="pwd" id="pwd" value="" placeholder="enter password"/>
+                <p>confirm password</p>
+                <input type="confirmpassword" name="cpwd" id="cpwd" value="" placeholder="re-enter password"/>
+                <p>Gender</p>
+                <input type="radio" name="gender" id="gender" value="M" checked/>Male
+                <input type="radio" name="gender" id="gender" value="F"/>Female
+                <p>software skills</p>
+                <input type="checkbox" name="skills" id="skills" value="C"/>C
+                <input type="checkbox" name="skills" id="skills" value="CPP"/>C++
+                <input type="checkbox" name="skills" id="skills" value="J"/>java
+                <p>branch</p>
+                <select name="selectbranch">
+                    <option value="C">CSE</option>
+                    <option value="E">ECE</option>
+                    <option value="EE">EEE</option>
+                    <option value="CI">CIVIL</option>
+                </select>
+                <p>Address</p>
+                <textarea  name="textaddress" rows="10" cols="30" wrap="physical"></textarea><br>
+                <input type="submit" value="submit"/>
+                <input type="reset" value="reset"/>
+
+            </form>
+        </body>
+    </html>
+</doctype>

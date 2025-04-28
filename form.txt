@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+    <meta charset="utf-8"/>
+    <title>form</title>
+    </head>
+    <body background="charan123.jpeg">
+        <form name="formv" action="processor.html" method="post" onsubmit="return validation()">
+           
+            <!--text-->
+            <table border="2"   cellspacing="1" align="center" width="800">
+            <caption><h1><b><u>Data Entry Form</u></b></h1></caption>
+            <tr><td><p>User Name:</p></td>
+            <td><input type="text"  name="username" id="username" placeholder="enter your name"style="background-color:transparent" /><br>
+            <input type="checkbox" name="checkname" id="checkname" onclick="toupper()" </td></tr>
+           
+           <!--password-->
+            <tr><td><p>Password</p></td>
+           <td> <input type="password" name="pwduser" id="pwduser"  placeholder="enter your password"/><br>
+                <input type=checkbox name="check" id="check" onclick="show()" /></td></tr>
+           
+           
+        
+            <tr><td><p>Confirm Password</p></td>
+            <td><input type="password" name="confirmpwd" id="confirmpwd"  placeholder="re-enter the password"/> </td></tr>
+                         
+           <!--Radio box-->
+            <tr><td><p>Gender</p></td>
+           <td><input type="radio" name="rdbGender" id="rdbGender" value="M"  />Male
+            <input type="radio" name="rdbGender" id="rdbgender" value="F"  />Female
+            <input type="radio" name="rdbGender" id="rdbGender" value="O"  />Other</td></tr>
+            
+             
+            <tr><td><p>Are you physically handicaped?</p></td>
+          <td><input type="radio" name="rdbQ" id="rdbQ" value="y"/>yes
+            <input type="radio" name="rdbQ" id="rdbQ" value="n"/>no</td></tr>
+
+
+            <!--number-->
+           <tr><td> <p>mobile number</p></td>
+           <td> <input type="text" name="numb" id="numb"  placeholder="enter your mobile no."/></td></tr>
+    
+
+            <!--date : for date of birth-->
+            <tr><td> <p>DOB</p></td>
+            <td><input type="date" name="dob" id="dob" value="" /></td></tr>
+            <!--email-->
+            <tr><td><p>email:</p></td>
+            <td><input type=email name="email" id="email" placeholder="enter email"></td></tr>
+    
+
+            <!--color-->
+            <tr><td><p>Fav color</p></td>
+            <td><input type="color" name="clr" id="clr" placeholder="enter your fav color"/> </td></tr>
+
+            <!--range :-->
+            <tr><td> <p>CGPA</p></td>
+            <td><input type="range" name="gpa" id="gpa" value="" /></td></tr>
+           
+           <!--checkbox-->
+            <tr><td> <p>software skills</p></td>
+            <td><input type="checkbox" name="softskills" value="C" checked/>C
+            <input type="checkbox" name="softskills" value="CPP"/>c++
+            <input type="checkbox" name="softskills" value-="J"/>Java</td></tr>
+            
+            
+            <!--selection box--> 
+             <tr><td><p>Branch </p></td>
+            <td><select name="selectbranch" >
+                <option value="C">CSE</option>
+                <option value="E">ECE</option>
+                <option value="EE">EEE</option>
+                <option value="CI">CIVIL</option>
+            </select></td></tr>
+
+
+            <!--textarea-->
+             <tr><td><p>present Address</p></td>
+            <td><textarea style="background-color: transparent;" name="presentadd" id="presentadd" rows="10" cols="30" wrap="physical"></textarea><br>
+            <input type="checkbox" name="addcheck" id="addcheck" onclick="sameadd()"/></td></tr>
+            <tr><td>Permanent Address</td>
+           <td><textarea style="background-color:transparent;" name="permanentadd" id="permanentadd" rows="10" cols="30" wrap="physical"></textarea></td></tr>
+            <!--if<wrap="off" then the entire text will be in a single line-->
+
+
+
+            <!--file:to upload file-->
+             <tr><td><p>Resume</p></td>
+            <td><input type="file" name="resume" id="resume"  placeholder="choose file" onchange="upload()"/></td></tr>
+            <!--submit info -->
+            <tr><td><input type="submit" value="submit"/>
+                <!--image button :same as submit button but we kept image in submission place -->
+
+                <input type="image" src="charann.jpg"  title="click to submit"  width="150" height="150"  border="2"/></td>
+
+            
+           <td>  <!--reset data-->
+            <input type="reset" value="RESET"/>
+
+            <!-- normalbutton:it wont submit, it is used to execute some javascripts-->
+            <input type="button"/></td></tr>
+            </td>
+            </tr>
+            </table>   </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            function validation()
+            {
+                var name=document.formv.username.value;
+                if(name==""||name==null)
+                {
+                    alert("name can't be empty");
+                    return false;
+                }
+
+                <!--no special characters in name-->
+
+                var i;
+                var f=0;
+                for(let i=0;i<name.length;i++)
+                {
+                    let ch=name.charCodeAt(i);
+                    if(!(ch>65 || ch<122))
+                    {
+                        f=1;
+                    }
+                }
+                if(f==1)
+                {
+                        alert("name does not contains special chars");
+                }
+                var pass=document.formv.pwduser.value;
+                var cpassword=document.formv.confirmpwd.value;
+                if(pass==""||pass==null)
+                {
+                    alert("password cant be mepty");
+                   return false;
+                }
+                if(cpassword==""||cpassword==null)
+                {
+                    alert("Confirm password cant be empty");
+                    return false;          
+                }
+                if(pass!=cpassword)
+                {
+                    alert("mismatch");
+                    return false;
+                }
+               
+                if(pass.length<8)
+                {
+                    alert("password length must be 8  ");
+                    return false;
+                }
+                var passformat=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/; 
+                if(!(pass.match(passformat)))
+                {
+                    alert("enter a strog password");
+                    return false;
+                }
+               
+                var num=document.formv.numb.value;
+                if(num==""||num==null)
+                {
+                    alert("mobile no. cant be empty");
+                    return false;
+                }
+                if(num.length<10)
+                {
+                    alert("mobile no. should be 10 digits");
+                    return false;
+                }
+                var i;
+                var ch;
+                for(let i=0;i<num.length;i++)
+                {
+                    ch=num.charCodeAt(i);
+                
+                      if( ch<48 || ch>57)
+                      {
+                        var f=1;
+                      }
+                }     
+                
+                      if(f==1){
+                        alert("mobile no.should be in digits");
+                        return false;
+                      }
+                var e=document.formv.email.value; 
+                var mailformat= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(e==""|| e==null)
+                {
+                    alert("email cant be empty");
+                    return false;
+                }
+            if(!(e.match(mailformat)))
+            {
+                alert("invalid email address");
+                return false;
+            }
+            var address=document.formv.permanentadd.value;
+            if(address=="" || address==null)
+            {
+                alert("Enter the address");
+                return false;
+            }
+            function sameadd()
+            {
+                var che=document.getElementById("addcheck");
+                var permanent=document.getElementById("permanentadd");
+                var present=document.getElementById("presentadd");
+                if(che.checked)
+                {
+                    permanent.value=present.value;
+                }
+                else
+                {
+                    permanent="";
+                }
+            }   
+            }
+            function show()
+            {
+                var  c=document.getElementById("check");
+                var p=document.getElementById("pwduser");
+                if(p.type=="password")
+                {
+                    p.type="text";
+                }
+                else
+                {
+                    p.type="password";
+                }
+            }
+            
+            function upload()
+            {  
+                alert("file successfully uploaded");
+            }
+            function toupper()
+            {
+                var cn=document.getElementById("checkname");
+                if(cn.checked)
+                {
+                    document.formv.username.value=document.formv.username.value.toUpperCase();
+                }
+                else{
+                    document.formv.username.value=document.formv.username.value.toLowerCase();
+                }
+            }
+
+        </script>
+            
+
+              
+     
+    </body>
+</html>

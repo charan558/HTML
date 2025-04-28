@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> layout design using div prac</title>
+        <style>
+            #loginbtn{
+                border:2px;
+                background-color: orange;
+
+                background-size:2px;
+                width:70px;
+                opacity: 0.5;
+                
+                margin-left: 770px;
+                margin-top:-550px;
+            }
+            .apple{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="login" id="loginsec">
+                <h3>login Title</h3>
+                <div id="close">close</div>
+                <input type="text" placeholder="name"/><br>
+                <input type="password" placeholder="password"/><br>
+                <button id="logsub">submit</button>
+            </div>
+        </header>
+        <div id="wrapper"   style="width:800px;margin:auto;border:0px solid gray;height:500%;text-align:center;background-colorblack;">
+       <div id="header" onmouseover="change()" onmouseout="defal()" style="width:100%;height:100px;background-color:orange;padding-top:20px">
+                 header content area
+        </div>
+        <div id="nav" class="nav" style="width:20%; height:300px; background-color:cyan;float:left;">Nav content area</div>
+        <div class="main" style="width:60%;height:300px;background-color:grey;float:left">main content area</div>
+    <div class="main" style="width:20%;height:300px;background-color:yellow;float:left">slidebar</div>
+        <div id="footer" style="width:100%; color:white;height:100px;margin:auto;background-color:black;clear:left; text-align:center;padding-top:20px"><font color="white">Footer content area</font></div>
+        <div id="changetheme" onclick="darktheme()" ondblclick="lighttheme()" style="width:80px;height:20px; background-color:orange; margin-top:20px;"> darktheme</div>
+       
+        </div>
+        <div id="loginbtn"><h1>login</h1></div>
+        <input type="button" value="open" id="open"/>
+        <input type="button" value="close" id="closing"/>
+    </body>
+    <script>
+        var a=document.getElementById("nav")
+        a.textContent="hello"
+        var b=document.getElementById("header")
+        b.innerHTML="<h1> header content</h1>"
+        var c=document.getElementsByClassName("main")[0]
+        c.textContent="mainc"
+        var d=document.getElementsByClassName("main")[1]
+        d.innerHTML="<h1> slide bar</h2>"
+            var e=document.getElementsByTagName("div")
+           // for(let i=0;i<e.length;i++)
+                //e[i].textContent="hello every one"
+        const darktheme=function()
+        {
+            document.querySelector("body").style.backgroundColor="cyan"
+           
+             document.querySelector(".main").style.backgroundColor="magenta"
+              document.querySelector("#header").style.backgroundColor="green"
+            document.querySelector("#nav").style.backgroundColor="black"
+             document.querySelector("changetheme").textContent="lighttheme"
+        }
+        const lighttheme=function()
+        {
+            document.querySelector("body").style.backgroundColor="white"
+            
+             document.querySelector(".main").style.backgroundColor="grey"
+              document.querySelector("#header").style.backgroundColor="orange"
+            document.querySelector("#nav").style.backgroundColor="cyan"
+            document.querySelector("changetheme").textContent="darktheme"
+
+        }
+        function change()
+        {
+            document.querySelector("#header").style.backgroundColor="magenta"
+               
+        }
+        function defal()
+        {
+            document.querySelector("#header").style.backgroundColor="orange"
+        }
+
+
+        //eventlisteners
+        const loginbt=document.getElementById("loginbtn")
+        const loginn=document.getElementById("login")
+        const nav=document.querySelector(".nav")
+        const item=document.querySelectorAll(".main")
+        loginbt.onclick=show
+        function show()
+        {
+            nav.style.display="none"
+            main.forEach(function(item))
+            {
+                item.style.display="none"
+            }
+            login.style.display="block"
+
+        }
+        document.getElementById("close").addEventListener('click',hidelogin)
+        function hidelogin()
+        {
+            nav.style.display="block"
+            main.foreach(function item)
+            {
+                item.display="block"
+            }
+            footer.style.display="block"
+            login.style.display="none"
+        }
+        const opennav=document.getElementById("open")
+        const closenv=document.getElementById("closing")
+        const sidenav=document.querySelector(".nav")
+
+        closenv=addEventListener('click',closeside)
+
+        function closeside()
+        {
+            sidenav.classList.toggle("apple")
+            document.querySelector(".apple").style.display="none"
+        }
+        </script>
+</html>

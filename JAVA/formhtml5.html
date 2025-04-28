@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title> form using html5 tags</title>
+    </head>
+    <body>
+        <div style="width:500px;height:600px;background-color:lightgrey;padding:10px;">
+        <form name="enteyform" action="processor.html" method="post">
+            <fieldset>
+                <legend><strong>Basic inputs</strong></legend>
+                <p>
+                    <label for="user">UserName:</label>
+                    <input type="text" name="user" id="user"/>
+                </p>
+                <p>
+                    <label for="pwd">Password  &nbsp;:</label>
+                    <input type="password" name="pwd" id="pwd"/>
+                </p>
+                <p>
+                    <label for="cpwd">confirm password:</label>
+                    <input type="password"  name="cpwd" id="cpwd"/>
+                </p>
+                <p>
+                    <label for="gender">Gender:</label>
+                    <input type="radio" name="gender" id="gender" value="M"/>MALE
+                    <input type="radio" name="gender" id="gender" value="F"/>FEMALE
+                </p>
+                <p>
+                    <label for="hobbies">Hobbies:</label>
+                    <input type="checkbox" name="hobbies" id="hobbies" value="r"/>Reading books
+                    <input type="checkbox" name="hobbies" id="hobbies" value="p"/>Playing games
+                    <input type="checkbox" name="hobbies" id="hobbies" value="w"/>Watching news
+                </p>
+                <p>
+                    <label for="quali">Qualification</label>
+                    <select name="quali">
+                    <option value="i">Inter</option>
+                    <option value="Btech">b-tech</option>
+                    <option value="d">diploma</option>
+                    <option value="I">IIT</option></select>
+
+                </p>
+                <p>
+                    <label for="add">Address:</label>
+                    <textarea name="add" id="add"cols="30" rows="10"  wrap="physical"></textarea>
+                </p>
+
+            </fieldset>
+            <fieldset>
+                <legend><strong>advanced inputs</strong></legend>
+            </fieldset>
+            <fieldset>
+                <legend><strong>submit & reset</strong></legend>
+                <p>
+                    <input type="submit" value="SUBMIT"/>
+                    <input type="reset" value="RESET"/>
+                </p>
+            </fieldset>
+        </form> </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../DAA"
+		},
+		{
+			"path": "../javascript"
+		},
+		{
+			"path": "../CSS"
+		},
+		{
+			"path": "../IT"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "javascript"
+	}
+}

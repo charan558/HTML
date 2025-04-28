@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title> image replace</title>
+        <script language="javascript">
+        function f1()
+        {
+            var f=document.getElementById("myfile").value;
+            f=f.replace(/^.*\\/,"");
+            document.getElementById("myImage").src=f;
+        }
+    </script>
+    </head>
+    <body>
+        <center>
+            <img width="500" id="myImage">
+            <input type="file" id="myfile" onChange="f1()">
+        </center>
+    </body>
+<html>

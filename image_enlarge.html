@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title> image enlarge</title>
+    <script language="javascript">
+        function f1(imageid)
+        {
+            document.getElementById(imageid).width=500;
+        }
+        function f2(imageid)
+        {
+            document.getElementById(imageid).width="300";
+        }
+        function f3(imageid)
+        {
+            document.getElementById(imageid).width=500;
+        }
+        function f4(imageid)
+        {
+            document.getElementById(imageid).width="300";
+        }
+        function f5(imageid)
+        {
+            document.getElementById(imageid).width=500;
+        }
+        function f6(imageid)
+        {
+            document.getElementById(imageid).width="300";
+        }
+        </script>
+        </head>
+        <body>
+            <center>
+                <table align="center" >
+                    <tr>
+                    <td width="50%">
+                    <img src ="room.png" width="300" id= "myimage1" onMouseOver="f1('myimage1')" onMouseOut="f2('myimage1')"></td>
+                    <td>
+                        <img src ="friendss.png" width="300" id= "myimage2" onMouseOver="f1('myimage2')" onMouseOut="f2('myimage2')"></td>
+                    
+                    </tr>
+                    <tr>
+                        <td width="50%">
+                        <img src ="charan1.jpg" width="300" id= "myimage3" onMouseOver="f3('myimage3')" onMouseOut="f4('myimage3')"></td>
+                        <td>
+                            <img src ="charan5.jpg" width="300" id= "myimage4" onMouseOver="f3('myimage4')" onMouseOut="f4('myimage4')"></td>
+                        
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                            <img src ="charan2.jpg" width="300" id= "myimage5" onMouseOver="f5('myimage5')" onMouseOut="f6('myimage5')"></td>
+                            <td>
+                                <img src ="charan3.jpg" width="300" id= "myimage6" onMouseOver="f5('myimage6')" onMouseOut="f6('myimage6')"></td>
+                            
+                            </tr>
+                            
+                </table>
+                </center>
+            </body>
+    </html>
